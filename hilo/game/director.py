@@ -2,7 +2,7 @@ from game.card import Card
 
 class Director:
     """
-    Creates the Director class is used to control the game
+    Creates the Director class that is used to control the game
     """
     def __init__(self):
         """
@@ -50,7 +50,7 @@ class Director:
             
     def adjust_points(self, win, points):
         """
-        Function tht calculates points. Uses the card_vs_input function to set the value of win
+        Function that calculates points. Uses the card_vs_input function to set the value of win
         """
 
         #if player guess correctly
@@ -97,7 +97,7 @@ class Director:
             #calls function to adjust points
             self.points = self.adjust_points(win, self.points)
             #prints points
-            print(f"You're score is {self.points}")
+            print(f"Your score is {self.points}")
             
             #if the adjusted point value is less than or equal to 0 sets is_playing to false
             #and ends the game loop
