@@ -86,7 +86,7 @@ class Director:
             player_input = input("Higher or lower? [h/l]: ")
 
             #if player inputs anything other than "h" or "l" loops through until they do
-            while player_input != "h" and player_input != "l":
+            while player_input.lower() != "h" and player_input.lower() != "l":
                 player_input = input("Higher or lower? [h/l]: ")
 
             #prints new card
@@ -102,7 +102,7 @@ class Director:
             #if the adjusted point value is less than or equal to 0 sets is_playing to false
             #and ends the game loop
             if self.points <= 0:
-                print("Game Over")
+                print("Game Over!!!")
                 self.is_playing = False
                 break
 
