@@ -93,7 +93,7 @@ class Director:
             print(f"Next card was: {new_card}")
             
             #calls function to check if user guessed correctly
-            win = self.card_vs_input(current_card, new_card, player_input)
+            win = self.card_vs_input(current_card, new_card, player_input.lower())
             #calls function to adjust points
             self.points = self.adjust_points(win, self.points)
             #prints points
