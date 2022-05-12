@@ -24,6 +24,18 @@ class Director:
 
         return card_value
 
+    def get_card_suit(card):
+        """
+        Calls the draw_card function from the Card class to generate a random suit
+        """
+
+        #calls function
+        Card.draw_card_suit(card)
+        #sets the suit = to the suit on the card
+        card_suit = card.suit
+
+        return card_suit
+
     def card_vs_input(self, current_card, new_card, player_input):
         """
         Function that checks if the current card is greater or less than the new card drawn.
@@ -72,6 +84,7 @@ class Director:
 
         #Gets the value of the first card
         current_card = self.get_card()
+        current_suit = self.get_card_suit()
 
         #main game loop
         while self.is_playing:
@@ -81,7 +94,7 @@ class Director:
 
             print()
             #prints current card
-            print(f"The card is: {current_card}")
+            print(f"The card is: {current_card} of {current_suit}")
             #gets player guess whether card is higher or lower
             player_input = input("Higher or lower? [h/l]: ")
 
@@ -90,7 +103,7 @@ class Director:
                 player_input = input("Higher or lower? [h/l]: ")
 
             #prints new card
-            print(f"Next card was: {new_card}")
+            print(f"Next card was: {new_card} of {current_suit}")
             
             #calls function to check if user guessed correctly
             win = self.card_vs_input(current_card, new_card, player_input.lower())
@@ -123,11 +136,3 @@ class Director:
             elif play_again.lower() == "n":
                 print("Thanks for playing")
                 self.is_playing = False
-
-
-
-
-
-            
-
-
