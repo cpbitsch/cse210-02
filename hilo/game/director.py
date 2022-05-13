@@ -91,6 +91,7 @@ class Director:
             
             #sets the value of the next card
             new_card = self.get_card()
+            new_suit = self.get_card_suit()
 
             print()
             #prints current card
@@ -121,7 +122,8 @@ class Director:
 
             #changes the card drawn this turn to the current card
             current_card = new_card
-            
+            current_card = new_suit
+
             #asks user if wants to play again
             play_again = input("Play again? [y/n]: ")
             
