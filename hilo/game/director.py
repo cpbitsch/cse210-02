@@ -104,7 +104,7 @@ class Director:
                 player_input = input("Higher or lower? [h/l]: ")
 
             #prints new card
-            print(f"Next card was: {new_card} of {current_suit}")
+            print(f"Next card was: {new_card} of {new_suit}")
             
             #calls function to check if user guessed correctly
             win = self.card_vs_input(current_card, new_card, player_input.lower())
@@ -122,7 +122,7 @@ class Director:
 
             #changes the card drawn this turn to the current card
             current_card = new_card
-            current_card = new_suit
+            current_suit = new_suit
 
             #asks user if wants to play again
             play_again = input("Play again? [y/n]: ")
